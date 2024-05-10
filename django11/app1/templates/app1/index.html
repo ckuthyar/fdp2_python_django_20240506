@@ -1,0 +1,23 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Project</title>
+    <link rel="stylesheet" href="{% static 'app1/css/style.css' %}">
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <p>{{ field.label_tag }} <!-- Renders the label for the field -->
+        {{ field }} <!-- Renders the input widget for the field -->
+        {{ field.errors }}</p> <!-- Renders any errors associated with the field -->
+    {% endfor %}
+    <button type="submit">Submit</button>
+    {{ error_message}}
+</form>
+</body>
+</html>
