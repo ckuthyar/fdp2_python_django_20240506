@@ -1,10 +1,12 @@
-#Django 
-<h1 align:center>Steps to create a Form using Model such that the database tables are created in Django's SQLite</h1>
+# Django Project Creation Procedure Document
+## Database tables are created in Django's SQLite
 
-Create django project django12
-Create django app app1
-Ensure app1 is working
-Make changes to models.py
+#### >django startproject django12
+#### >cd django12
+#### >django startapp app1
+
+
+Add to models.py
 ```
 class students(models.Model):
         name1=models.CharField(max_length=50)
@@ -12,7 +14,7 @@ class students(models.Model):
         course1=models.CharField(max_length=30)
 ```
 
-Create new file forms.py
+Create new file forms.py and 
 ```
 class inputform(forms.ModelForm):
     class Meta:
@@ -20,7 +22,7 @@ class inputform(forms.ModelForm):
         fields=['name1','college1','course1']
 ```
 
-Make changes to views.py
+Add to views.py
 ```
 from .forms import inputform
 def home(request):
@@ -35,7 +37,7 @@ def home(request):
 ```
 
 
-Make changes to index.html
+Add to index.html
 ```
     <form method="POST">
         {% csrf_token %}
@@ -46,27 +48,20 @@ Make changes to index.html
 ```
 
 
-python manage.py makemigration
+#### >python manage.py makemigration
+#### >python manage.py migrate
 
+#### http://127.0.0.1:8080/app1       
+#### >python manage.py createsuperuser   
+#### http://127.0.0.1:8080/admin
 
-python manage.py migrate
-
-Check if 
-http://127.0.0.1:8080/app1 is working
-
-
-python manage.py createsuperuser
-
-
-http://127.0.0.1:8080/admin
-
-Make changes to models.py - so that the object name is the same as the student's name
+Add to models.py - so that the object name is the same as the student's name
 ```
 def __str__(self):
         return self.name1
 ```
         
-Make changes to admin.py
+Add to admin.py
 ```
 from .models import students
 admin.site.register(students)
