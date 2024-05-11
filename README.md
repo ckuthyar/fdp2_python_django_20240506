@@ -14,7 +14,7 @@ class students(models.Model):
         course1=models.CharField(max_length=30)
 ```
 
-Create new file forms.py and 
+Create new file forms.py and add
 ```
 class inputform(forms.ModelForm):
     class Meta:
