@@ -1,26 +1,27 @@
 #Django 
-Steps to create a Form using Model such that the database tables are created in Django's SQLite
+<h1 align:center>Steps to create a Form using Model such that the database tables are created in Django's SQLite</h1>
 
-1. Create django project django12
-2. Create django app app1
-3. Ensure app1 is working
-
-4. Make changes to models.py
-
-   `class students(models.Model):
+Create django project django12
+Create django app app1
+Ensure app1 is working
+Make changes to models.py
+```
+class students(models.Model):
         name1=models.CharField(max_length=50)
         college1=models.CharField(max_length=100)
-        course1=models.CharField(max_length=30)`
+        course1=models.CharField(max_length=30)
+```
 
-6. Create new file forms.py
+Create new file forms.py
+```
 class inputform(forms.ModelForm):
     class Meta:
         model=students
         fields=['name1','college1','course1']
+```
 
-
-7. Make changes to views.py
-
+Make changes to views.py
+```
 from .forms import inputform
 def home(request):
     if request.method=="POST":
@@ -31,37 +32,47 @@ def home(request):
     else:
         form1=inputform()
     return render(request,'app1/index.html',{'form':form1})
+```
 
 
-7. Make changes to index.html
-
+Make changes to index.html
+```
     <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
         <button type="submit">Submit</button>
     </form>
     <p>{{param1}}</p>
+```
 
 
-8. >python manage.py makemigrations
+python manage.py makemigration
 
-9. >python manage.py migrate
-Check if http://127.0.0.1:8080/app1 is working
 
-10. >python manage.py createsuperuser
+python manage.py migrate
 
-11. http://127.0.0.1:8080/admin
+Check if 
+http://127.0.0.1:8080/app1 is working
 
-12. >Make changes to models.py - so that the object name is the same as the student's name
+
+python manage.py createsuperuser
+
+
+http://127.0.0.1:8080/admin
+
+Make changes to models.py - so that the object name is the same as the student's name
+```
 def __str__(self):
         return self.name1
-
-13. Make changes to admin.py
-
+```
+        
+Make changes to admin.py
+```
 from .models import students
 admin.site.register(students)
+```
 
-14.  We can also check by clicking on db.sqlite
+We can also check by clicking on db.sqlite
 
 Procedure to create a simple Django Project
 
