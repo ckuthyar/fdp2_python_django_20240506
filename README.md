@@ -183,3 +183,87 @@ DATABASES = {
 **Step 21:** type "python manage.py makemigrations" in terminal  
 **Step 22:** type  "python manage.py migrate in terminal" in terminal  
 **Step 23:**  python manage.py runserver  
+
+
+
+### Basic Setup for new programmers
+Testing for sample Python projects, 1.py to 16.py.  We recommend the use of IDLE for building simple Python code.  No need for Anaconda, Pycharm for such complicated IDEs.
+https://www.python.org/
+During installation, please tick the box - Add Path -  This is very important
+
+Django installation.  Go to IDLE - File - Path Browser. Check the location where Python is installed. Eg
+>cd USERS
+>cd LAPTOP
+>cd AppData  ( This is a hidden folder, but we can go to cmd and change directory)
+> cd Local
+> cd Programs
+> cd Python
+> cd Python312
+> cd Scripts
+> pip3 install django
+> pip3 install mysql-connector-python
+
+MySQL installation.  Choose MySQL Community (GPL) Downloads and install 2 products
+a) MySQL Server
+b) MySQL Workbench
+set username=root,  password=root
+### >create database db1
+### >create table employee(id bigint auto_increment primary key, name1 varchar(100))
+### >insert into employee(name1) values ("Chandra"), ("Siva"), ("Rajani")
+### >select * from employee
+https://www.mysql.com/downloads/   
+
+5) VS Code Installation
+https://code.visualstudio.com/download
+Add extension for Python (Python language support) from Microsoft
+
+6) Git, GitHub 
+- Download Git for Windows https://git-scm.com/download/win   Carefully complete the elaborate installation procedure consisting of about 10 steps
+- Create account in https://github.com/
+
+7) Basic Testing of all Components
+- Choose a working directory D:\coding
+- Create a sub-directory:  \django.   
+So, all your work will be in D:\coding\django  (preferred) OR C:\coding\django
+
+In IDLE
+7a) File - New File - 
+```
+print (8+4)
+```
+ - save as 1.py in D:\coding\django   Run - Run Module
+
+In VS Code
+Open folder D:\coding\django\
+7b) Create index.html, type ! and Enter.  You will see a predefined HTML code. Run - Run without Debugging - Chrome 
+7c) Create 2.py - 
+```
+print(8+3) 
+```
+- save as 2.py in D:\coding\django. Open Terminal (... in top line), New Terminal
+> python 2.py
+
+If python command is not in the path, set the environment variable by typing env, edit system environment variables, go to Path, edit, add New,  copy the directory path where Python is installed, save.  Close cmd or Terminal. Open again cmd or Terminal.
+
+
+If django-admin command is not in the path, set the environment variable by typing env, edit system environment variables, go to Path, edit, add New,  copy the directory path where Django is installed, save.  Close cmd or Terminal. Open again cmd or Terminal.
+
+To test, 
+>python --version
+>django-admin
+
+
+Sample Django programs available in  https://github.com/ckuthyar/fdp2_python_django_20240506/tree/main
+
+Setup procedures in  README.md and README2.md
+https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/README.md
+https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/README2.md
+
+An automated program sangamone-django.py to change the following files has been created to change the following files as required by Django
+>django1\settings.py
+>django1\urls.py
+>app1\views.py
+>app1\urls.py  (new file to be created)
+> templates\app1\index.html  (new file to be created within templates folder and within app1 folder)
+https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/sangamone-django.py
+
