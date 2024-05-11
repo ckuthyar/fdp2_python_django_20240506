@@ -7,10 +7,10 @@ Steps to create a Form using Model such that the database tables are created in 
 
 4. Make changes to models.py
 
-   class students(models.Model):
+   `class students(models.Model):
         name1=models.CharField(max_length=50)
         college1=models.CharField(max_length=100)
-        course1=models.CharField(max_length=30)
+        course1=models.CharField(max_length=30)`
 
 6. Create new file forms.py
 class inputform(forms.ModelForm):
