@@ -18,6 +18,7 @@ class students(models.Model):
 
 Create new file forms.py and add
 ```
+from django import forms
 class inputform(forms.ModelForm):
     class Meta:
         model=students
@@ -27,6 +28,7 @@ class inputform(forms.ModelForm):
 Add to views.py
 ```
 from .forms import inputform
+
 def home(request):
     if request.method=="POST":
         form1=inputform(request.POST)
@@ -50,7 +52,7 @@ Add to index.html
 ```
 
 
-#### >python manage.py makemigration
+#### >python manage.py makemigrations
 #### >python manage.py migrate
 
 #### http://127.0.0.1:8080/app1       
