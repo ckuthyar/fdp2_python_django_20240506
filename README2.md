@@ -28,6 +28,7 @@ class inputform(forms.ModelForm):
 
 Add to views.py
 ```
+from django.shortcuts import render
 from .forms import inputform
 
 def home(request):
@@ -73,4 +74,5 @@ admin.site.register(students)
 ```
 
 We can also check by clicking on db.sqlite
+Install SQLite Viewer extension in VSCode
 
