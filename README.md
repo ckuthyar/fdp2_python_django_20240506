@@ -25,10 +25,14 @@ We created an app with *app name* as **app1**
 
 **Step4 :** 
 Within Django1 project, we can create multiple apps. Let us name them as app1, app2, app3. The browser home page for each of these apps will be 
-http://127.0.0.1:8000/app1
-http://127.0.0.1:8000/app2
-http://127.0.0.1:8000/app3
-http://127.0.0.1:8000/admin - commmon admin control for all the apps
+http://127.0.0.1:8000/app1   
+
+http://127.0.0.1:8000/app2   
+
+http://127.0.0.1:8000/app3   
+
+http://127.0.0.1:8000/admin - commmon admin control for all the apps   
+
 
 ## PHASE2: Creating urls 
 **Step5 :**  
