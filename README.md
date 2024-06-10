@@ -19,9 +19,9 @@ We changed the current dirctory to *django1*
 
 **Step3 :** 
 ```
-django-admin startapp factorial1  
+django-admin startapp app1  
 ```
-We created an app with *app name* as **factorial1**  
+We created an app with *app name* as **app1**  
 
 **Step4 :** 
 ```
@@ -34,9 +34,9 @@ If you are doing multiple apps in same project you might get *Page Not Found Err
 
 ## PHASE2: Creating urls 
 **Step5 :**  
-5a) In factorial1, create folder templates  
-5b) In factorial1/templates, create folder factorial1   
-5c) In factorial1/templates/factorial1, create file index.html  
+5a) In app1, create folder templates  
+5b) In app1/templates, create folder app1   
+5c) In app1/templates/app1, create file index.html  
   
 **Step6:**  In index.html write a program which include 'Hello World' and {{param1}}  
 ```
@@ -48,19 +48,19 @@ If you are doing multiple apps in same project you might get *Page Not Found Err
 
 **Step7 :** Go to django1/settings.py add 
 ```
-INSTALLED_APPS = [...,"factorial1", ]
+INSTALLED_APPS = [...,"app1", ]
 ```
 
-**Step8 :** Go to factorial1/views.py
+**Step8 :** Go to app1/views.py
 ```
 def home(request):
-    return render(request,'factorial1/index.html',{'param1':"hello world"})
+    return render(request,'app1/index.html',{'param1':"hello world"})
 ```
 
-**Step9 :** Create urls.py in factorial1 and add
+**Step9 :** Create urls.py in app1 and add
 ```
 from django.urls import path
-from factorial1.views import home
+from app1.views import home
 urlpatterns = [path('', home),]
 ```
 This is not mandatory to create urls.py for each apps. you can add all apps path in urls.py in main project.  
@@ -75,7 +75,7 @@ from django.urls import include
 ```
 10b) Inside urlpatterns  add
 ```
-path("factorial1/" ,include("factorial1.urls")),
+path("app1/" ,include("app1.urls")),
 ```
 
 **Step11 :** In Terminal run,  
@@ -86,7 +86,7 @@ You will get output as
 Hello World   
 hello world  
 In Browser,
-We should make changes in the server at localhost port 8000 i.e; **127.0.0.1:8000/factorial1**
+We should make changes in the server at localhost port 8000 i.e; **127.0.0.1:8000/app1**
 
 ## PHASE3: Logic to be implemented in views.py 
 **Step12 :**
@@ -94,12 +94,12 @@ Something like this
 ```
 from django.shortcuts import render
 def home(request):
-    result=1
+    factorial=1
     n1=5
     for i in range(1,n1+1,1):
-        result=result*i
-    return render(request,'factorial1/index.html',{'param1':result,'param2':n1})
-    
+        factorial=factorial*i
+    return render(request,'app1/index.html',{'param1':factorial,'param2':n1})
+
 ```
 Also make changes in index.html  
 ```
@@ -116,10 +116,9 @@ We should get output as *The factorial of 5 is 120*
 ```
 from django import forms
 class inputform(forms.Form):
-    name=forms.CharField(max_length=10)
-    input=forms.IntegerField(min_value=$1,max_value=$2,label="$3")
+    input1=forms.IntegerField(min_value=1,max_value=10,label="Enter a number")
+    input2=forms.CharField(max_length=10)
 ```
-  *$ may be any numbers for min and max values and characters for the label*  
 
 **Step14 :** in index.html
 ```
@@ -137,16 +136,16 @@ class inputform(forms.Form):
 ```
 *we can use (p, ul, table)  where  p-paragraph, ul-unordered list, table-table*  
    
-**Step15 :** in factorial/views.py, 
+**Step15 :** in app1/views.py, 
 ```
 from django.shortcuts import render
-from factorial1.forms import inputform
+from app1.forms import inputform
 def home(request):
     if request.method=="POST":
         form1=inputform(request.POST)
         if form1.is_valid():
             data=form1.cleaned_data
-            n1=data.get("input")
+            n1=data.get("input1")
             result=fact(n1)
             return render(request,"factorial1/index.html",{'param1':result, 'param2':n1, 'form':form1})
     else:
@@ -191,7 +190,7 @@ DATABASES = {
 
 ## Basic Setup for new programmers
 
-1. Testing for sample Python projects, 1.py to 16.py.  We recommend the use of IDLE for building simple Python code.  No need for Anaconda, Pycharm for such complicated IDEs. During installation, please tick the box - Add Path -  This is very important
+1. Testing for sample Python projects, 1.py to 16.py.  We recommend the use of IDLE for building simple Python code.  During installation, please tick the box - Add Path -  This is very important
 https://www.python.org/
 
 
@@ -263,7 +262,7 @@ To test,
 https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/README.md
 https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/README2.md
 
-11. An automated program sangamone-django.py to change the following files has been created to change the following files as required by Django
+11. An automated program sangamone-django3.0.py to change the following files has been created to change the following files as required by Django
 >django1\settings.py
 >django1\urls.py
 >app1\views.py
