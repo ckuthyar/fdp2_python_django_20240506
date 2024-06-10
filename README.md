@@ -75,7 +75,7 @@ from django.urls import include
 ```
 10b) Inside urlpatterns  add
 ```
-path("factorial1" ,include("factorial1.urls")),
+path("factorial1/" ,include("factorial1.urls")),
 ```
 
 **Step11 :** In Terminal run,  
