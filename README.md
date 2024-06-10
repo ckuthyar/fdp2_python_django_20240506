@@ -24,13 +24,11 @@ django-admin startapp app1
 We created an app with *app name* as **app1**  
 
 **Step4 :** 
-```
-python manage.py runserver  
-```
-Run the Django development server  
-If everything is okay with your Project, Django will start running the server at localhost port 8000 (127.0. 0.1:8000), and then you have to navigate to that link in your browser.  
-  
-If you are doing multiple apps in same project you might get *Page Not Found Error*, You can ignore it.  
+Within Django1 project, we can create multiple apps. Let us name them as app1, app2, app3. The browser home page for each of these apps will be 
+http://127.0.0.1:8000/app1
+http://127.0.0.1:8000/app2
+http://127.0.0.1:8000/app3
+http://127.0.0.1:8000/admin - commmon admin control for all the apps
 
 ## PHASE2: Creating urls 
 **Step5 :**  
@@ -117,7 +115,6 @@ We should get output as *The factorial of 5 is 120*
 from django import forms
 class inputform(forms.Form):
     input1=forms.IntegerField(min_value=1,max_value=10,label="Enter a number")
-    input2=forms.CharField(max_length=10)
 ```
 
 **Step14 :** in index.html
@@ -159,7 +156,10 @@ def fact(n1):
         result=result*i
     return result
 ```
-                                           
+```
+>python manage.py runserver
+```
+http://127.0.0.1:8000/app1                              
 
 ## Phase5 is not complete. We will make the modifications 
 
