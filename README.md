@@ -193,22 +193,20 @@ Changes in the body section of index.html
 We can further enhance the index.html 
 ```
 
-#Code not working
+
 <body>   
   <p>Factorial of Numbers</p>
-  {% for i,j in param1,param2 %}
-  <p>{{"Factorial of "+ j + " - " +i}}</p>
+  {% for i,j in param1 %}
+  <p>Factorial of {{j}} - {{i}}</p>
   {% endfor %}   
 </body>
-#Code not working
+
 ```
 Corresponding changes in views.py
 ```
 def home(request):
     result=getFact(8)
-    factorial=result[0]
-    numbers=result[1]
-    return render(request,'app1/index.html',{'param1':factorial,'param2':numbers})
+    return render(request,'app2/index.html',{'param1':result})
 
 def getFact(limit):
     factorial=[]
@@ -220,7 +218,7 @@ def getFact(limit):
             fact1=fact1*i
         factorial.append(fact1)
         numbers.append(n1)
-    return(factorial, numbers)
+    return zip(factorial,numbers)
 ```
    
 
