@@ -164,33 +164,7 @@ def fact(n1):
 >python manage.py runserver
 ```
 http://127.0.0.1:8000/app1                              
-
-## Phase5 is not complete. We will make the modifications 
-
-## PHASE5: 
-**Step 16:** make DEBUG = False in settings.py  
-**Step17:** make   
-```ALLOWED_HOSTS = ['*']
-```
-**Step 18(optional):** 
-```
-DATABASES = {  
-    'default': {  
-        'ENGINE': 'django.db.backends.sqlite3',  
-        'NAME': BASE_DIR / 'db.sqlite3',  
-    }  
-}
-```
-**Step 19 :** STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
-**Step 20:** write python manage.py collectstatic in terminal  
-(Optional , only used if we are using database operations)  
-**Step 21:** type "python manage.py makemigrations" in terminal  
-**Step 22:** type  "python manage.py migrate in terminal" in terminal  
-**Step 23:**  python manage.py runserver  
-
-
-
-
+----End of Factorial Program in App1--------------     
 
 ## Basic Setup for new programmers
 
