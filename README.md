@@ -202,7 +202,7 @@ We can further enhance the index.html
 </body>
 #Code not working```
 Corresponding changes in views.py
-'''
+```
 def home(request):
     result=getFact(8)
     factorial=result[0]
@@ -220,7 +220,7 @@ def getFact(limit):
         factorial.append(fact1)
         numbers.append(n1)
     return(factorial, numbers)
-'''
+```
    
 
 
