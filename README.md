@@ -174,15 +174,25 @@ https://www.python.org/
 
 2. Django installation.  Go to IDLE - File - Path Browser. Check the location where Python is installed. Eg
 >cd USERS
+>
 >cd LAPTOP
+>
 >cd AppData  ( This is a hidden folder, but we can go to cmd and change directory)
+>
 > cd Local
+>
 > cd Programs
+>
 > cd Python
+>
 > cd Python312
+>
 > cd Scripts
+>
 > pip3 install django
+>
 > pip3 install mysql-connector-python
+>
 
 3. MySQL installation.  Choose MySQL Community (GPL) Downloads and install 2 products
 a) MySQL Server
