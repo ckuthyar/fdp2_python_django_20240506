@@ -180,21 +180,18 @@ Factorial of 7 - 5040
 Factorial of 8 - 40320
 
 Changes in the body section of index.html
-'''   
-
+```  
 <body>   
   <p>Factorial of Numbers</p>
   {% for i in param1 %}
   <p>{{i}}</p>
   {% endfor %}   
 </body>
-
-'''   
+``` 
 
 
 We can further enhance the index.html 
-'''
-
+```
 
 #Code not working
 <body>   
@@ -203,7 +200,7 @@ We can further enhance the index.html
   <p>{{"Factorial of "+ j + " - " +i}}</p>
   {% endfor %}   
 </body>
-#Code not working'''
+#Code not working```
 Corresponding changes in views.py
 '''
 def home(request):
