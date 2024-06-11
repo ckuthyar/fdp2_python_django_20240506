@@ -90,7 +90,8 @@ hello world
 In Browser,
 We should make changes in the server at localhost port 8000 i.e; **127.0.0.1:8000/app1**
 
-## PHASE3: Logic to be implemented in views.py 
+
+## PHASE3: Logic to be implemented in views.py for taking input from a HTML Form
 **Step12 :**
 Something like this  
 ```
@@ -195,9 +196,13 @@ https://www.python.org/
 >
 
 3. MySQL installation.  Choose MySQL Community (GPL) Downloads and install 2 products
-a) MySQL Server
-b) MySQL Workbench
-set username=root,  password=root
+   
+a) MySQL Server   
+
+b) MySQL Workbench   
+
+set username=root,  password=root   
+
 ### >create database db1
 ### >create table employee(id bigint auto_increment primary key, name1 varchar(100))
 ### >insert into employee(name1) values ("Chandra"), ("Siva"), ("Rajani")
