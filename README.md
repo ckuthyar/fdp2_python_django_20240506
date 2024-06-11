@@ -165,7 +165,31 @@ def fact(n1):
 >python manage.py runserver
 ```
 http://127.0.0.1:8000/app1                              
-----End of Factorial Program in App1--------------     
+----End of Factorial Program in App1--------------  
+
+Assignment: Create app2 to print factorial numbers from 1 to 8, one below the other as   
+
+Factorial of 1 - 1   
+Factorial of 2 - 2   
+Factorial of 3 - 6   
+Factorial of 4 - 24   
+Factorial of 5 - 120   
+Factorial of 6 - 720   
+Factorial of 7 - 5040   
+Factorial of 8 - 40320
+
+Changes in the body section of index.html
+'''
+<body>   
+  <p>Hello World</p>
+  {% for i in param1 %}
+  <p>{{i}}</p>
+  {% endfor %}   
+</body>
+'''
+   
+
+
 
 ## Basic Setup for new programmers
 
