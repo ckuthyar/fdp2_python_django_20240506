@@ -167,7 +167,8 @@ def fact(n1):
 http://127.0.0.1:8000/app1                              
 ----End of Factorial Program in App1--------------  
 
-Assignment: Create app2 to print factorial numbers from 1 to 8, one below the other as   
+Assignment: Create app2 to print factorial numbers from 1 to 8, one below the other as shown. Let us return param1=[1,2,6,24,120,720,5040,40320] and param2=[1,2,3,4,5,6,7,8] from views.py and iterate these 2 lists using {% for each %} syntax  
+    
 
 Factorial of 1 - 1   
 Factorial of 2 - 2   
@@ -181,11 +182,42 @@ Factorial of 8 - 40320
 Changes in the body section of index.html
 '''
 <body>   
-  <p>Hello World</p>
+  <p>Factorial of Numbers</p>
   {% for i in param1 %}
   <p>{{i}}</p>
   {% endfor %}   
 </body>
+'''
+We can further enhance the index.html 
+'''
+#Code not working
+<body>   
+  <p>Factorial of Numbers</p>
+  {% for i,j in param1,param2 %}
+  <p>{{"Factorial of "+ j + " - " +i}}</p>
+  {% endfor %}   
+</body>
+#Code not working
+'''
+Corresponding changes in views.py
+'''
+def home(request):
+    result=getFact(8)
+    factorial=result[0]
+    numbers=result[1]
+    return render(request,'app1/index.html',{'param1':factorial,'param2':numbers})
+
+def getFact(limit):
+    factorial=[]
+    numbers=[]
+    for j in range(1,limit+1,1):
+        n1=j
+        fact1=1
+        for i in range(1,n1+1,1):
+            fact1=fact1*i
+        factorial.append(fact1)
+        numbers.append(n1)
+    return(factorial, numbers)
 '''
    
 
