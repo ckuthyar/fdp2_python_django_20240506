@@ -20,6 +20,7 @@ class students(models.Model):
 Create new file forms.py and add
 ```
 from django import forms
+from app1.models import students
 class inputform(forms.ModelForm):
     class Meta:
         model=students
@@ -29,7 +30,7 @@ class inputform(forms.ModelForm):
 Add to views.py
 ```
 from django.shortcuts import render
-from .forms import inputform
+from app1.forms import inputform
 
 def home(request):
     if request.method=="POST":
