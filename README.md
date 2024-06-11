@@ -200,7 +200,8 @@ We can further enhance the index.html
   <p>{{"Factorial of "+ j + " - " +i}}</p>
   {% endfor %}   
 </body>
-#Code not working```
+#Code not working
+```
 Corresponding changes in views.py
 ```
 def home(request):
