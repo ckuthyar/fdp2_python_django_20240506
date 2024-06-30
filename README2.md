@@ -10,6 +10,7 @@
 
 Add to models.py
 ```
+from django.db import models
 class students(models.Model):
         name1=models.CharField(max_length=50)
         college1=models.CharField(max_length=100)
@@ -18,6 +19,8 @@ class students(models.Model):
 
 Create new file forms.py and add
 ```
+from django import forms
+from app1.models import students
 class inputform(forms.ModelForm):
     class Meta:
         model=students
@@ -26,7 +29,9 @@ class inputform(forms.ModelForm):
 
 Add to views.py
 ```
-from .forms import inputform
+from django.shortcuts import render
+from app1.forms import inputform
+
 def home(request):
     if request.method=="POST":
         form1=inputform(request.POST)
@@ -50,7 +55,7 @@ Add to index.html
 ```
 
 
-#### >python manage.py makemigration
+#### >python manage.py makemigrations
 #### >python manage.py migrate
 
 #### http://127.0.0.1:8080/app1       
@@ -70,4 +75,5 @@ admin.site.register(students)
 ```
 
 We can also check by clicking on db.sqlite
+Install SQLite Viewer extension in VSCode
 
