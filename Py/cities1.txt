@@ -1,0 +1,8 @@
+Los Angeles(GMT-8)
+New York(GMT-5)
+London(GMT)
+Dubai(GMT+4)
+Bangalore(GMT+5.5)
+Singapore(GMT+7.5)
+Tokyo(GMT+8.5)
+Sydney(GMT+10.5)
