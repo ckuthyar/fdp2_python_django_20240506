@@ -112,9 +112,9 @@ class inputform(forms.Form):
 <body>
     <h1>Factorial Program</h1>
     <form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}    
-    <button type="submit">find factorial</button>
+        {% csrf_token %}
+        {{form.as_p}}    
+        <button type="submit">find factorial</button>
     </form>
     <p>Factorial of {{param2}} is {{param1}}
     </body>
