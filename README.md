@@ -5,25 +5,50 @@ Help from: Ramachandra Udupa and Shashank S
 *Here are the steps to follow :-*
 
 ## PHASE1: Project creation 
-**Step1 :** In Terminal  
+**Step1 :** In Terminal - create a project with *folder name* and *project name* as **django1**
 ```
 django-admin startproject django1
 ```
-It is used to create a project with *folder name* and *project name* as **django1**  
 
-**Step2 :** 
+**Step2 :** - change dirctory to *django1*
 ```
 cd django1
 ```
-We changed the current dirctory to *django1*  
 
-**Step3 :** 
+**Step3 :** - create an app with *app name* as **app1**
 ```
 django-admin startapp app1  
 ```
-We created an app with *app name* as **app1**  
 
-**Step4 :** 
+
+**Step4 :** In **django1/settings.py** add 
+```
+INSTALLED_APPS = [...,"app1", ]
+```
+**Step5 :** In **django1/urls.py**  - add *include* in import, add *path* in *urlpatterns* 
+```
+from django.urls import path,include
+```
+
+```
+path("app1/" ,include("app1.urls")),
+```
+**Step7 :**  
+5a) In app1, create folder templates  
+5b) In app1/templates, create folder app1   
+5c) In app1/templates/app1, create file index.html  
+
+
+**Step8:**  Create folder app1/templates, create folder app1/templates/app1, create file app1/templates/app1/index.html
+```
+<body>
+    <p>Hello World</p>
+    <p>{{param1}}</p>
+</body>
+```
+
+
+**Step6 :** 
 Within Django1 project, we can create multiple apps. Let us name them as app1, app2, app3. The browser home page for each of these apps will be 
 http://127.0.0.1:8000/app1   
 
@@ -34,51 +59,19 @@ http://127.0.0.1:8000/app3
 http://127.0.0.1:8000/admin - commmon admin control for all the apps   
 
 
-## PHASE2: Creating urls 
-**Step5 :**  
-5a) In app1, create folder templates  
-5b) In app1/templates, create folder app1   
-5c) In app1/templates/app1, create file index.html  
-  
-**Step6:**  In index.html write a program which include 'Hello World' and {{param1}}  
-```
-<body>
-    <p>Hello World</p>
-    <p>{{param1}}</p>
-</body>
-```
-
-**Step7 :** Go to django1/settings.py add 
-```
-INSTALLED_APPS = [...,"app1", ]
-```
-
-**Step8 :** Go to app1/views.py
+**Step9 :** Go to app1/views.py
 ```
 def home(request):
     return render(request,'app1/index.html',{'param1':"hello world"})
 ```
 
-**Step9 :** Create urls.py in app1 and add
+**Step10 :** Create urls.py in app1 and add
 ```
 from django.urls import path
 from app1.views import home
 urlpatterns = [path('', home),]
 ```
-This is not mandatory to create urls.py for each apps. you can add all apps path in urls.py in main project.  
-It's an option that most Django developer seem to take advantage of because it helps keep your code organized - i,e; the urls relevant to a specific app live in that app's folder.  
 
-**Step10 :** In django1/urls.py  
-There will be  two parts :  
-10a) After ```from django.urls import path```  
-import include- It is used for including the content of a file into your current program.  
-```
-from django.urls import include
-```
-10b) Inside urlpatterns  add
-```
-path("app1/" ,include("app1.urls")),
-```
 
 **Step11 :** In Terminal run,  
 ```
@@ -91,17 +84,22 @@ In Browser,
 We should make changes in the server at localhost port 8000 i.e; **127.0.0.1:8000/app1**
 
 
-## PHASE3: Logic to be implemented in views.py for taking input from a HTML Form
-**Step12 :**
-Something like this  
+## Take Input from a HTML Form: In *views.py*
+
+**Step12 :** 
 ```
 from django.shortcuts import render
 def home(request):
     factorial=1
     n1=5
-    for i in range(1,n1+1,1):
-        factorial=factorial*i
-    return render(request,'app1/index.html',{'param1':factorial,'param2':n1})
+    result=fact(n1)
+    return render(request,'app1/index.html',{'param1':result,'param2':n1})
+
+def fact(n1)
+    fact1=1
+    for i in range(0,n1+1,1):
+    fact1=fact1*i
+    return fact1
 
 ```
 Also make changes in index.html  
