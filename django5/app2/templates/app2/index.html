@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ICICI DATA</h1>
+    {% for i in form %}
+    <p>{{i.fname}}</p>
+    <p>{{i.lname}}</p>
+    <p>{{i.aadhar}}</p>
+    <p>{{i.pincode}}</p>
+    {% endfor %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

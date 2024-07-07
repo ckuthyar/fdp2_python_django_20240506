@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form method="POST" id="myform">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">SUBMIT</button>
+    </form>
+    <div id="container"></div>
+    <script>
+        $(document)
+        .ready(function(event){
+            $("#myform")
+            .submit(function(event){
+                event.preventDefault();
+                var data1=$(this).serialize();
+                $.ajax({
+                    url:"/app1/api1",
+                    type:"POST",
+                    data:data1,
+                    success:function(response){
+                        if(response.param1){
+                            var html1="<h1>Permutation of Words</h1>";
+                            for(let i=0; i<response.param1.length; i++){
+                                html1+="<p>"+response.param1[i]+"</p>";
+                            }
+                            $("#container").html(html1);
+                        }
+                    },
+                    error: function(xhr, status, error){
+                        console.error("Error:",error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
