@@ -1,31 +1,27 @@
 # Django_Procedure
-Author: Yutha Achar, Chandrashekar Rao Kuthyar 
-Help from: Ramachandra Udupa and Shashank S
-*How to add multiple apps in a single project.*   
-*Here are the steps to follow :-*
+Authors: Yutha Achar,CS,Ramachandra,Sivashankar
 
-## PHASE1: Project creation 
-**Step1 :** In Terminal - create a project with *folder name* and *project name* as **django1**
+**Step 0.1 :** In Terminal - create a project with *folder name* and *project name* as **django1**
 ```
 django-admin startproject django1
 ```
 
-**Step2 :** - change dirctory to *django1*
+**Step 0.2 :** - change dirctory to *django1*
 ```
 cd django1
 ```
 
-**Step3 :** - create an app with *app name* as **app1**
+**Step 0.3 :** - create an app with *app name* as **app1**
 ```
 django-admin startapp app1  
 ```
 
 
-**Step4 :** In **django1/settings.py** add 
+**Step1  :** In **django1/settings.py** add 
 ```
 INSTALLED_APPS = [...,"app1", ]
 ```
-**Step5 :** In **django1/urls.py**  - add *include* in import, add *path* in *urlpatterns* 
+**Step2 :** In **django1/urls.py**  - add *include* in import, add *path* in *urlpatterns* 
 ```
 from django.urls import path,include
 ```
@@ -33,13 +29,7 @@ from django.urls import path,include
 ```
 path("app1/" ,include("app1.urls")),
 ```
-**Step7 :**  
-5a) In app1, create folder templates  
-5b) In app1/templates, create folder app1   
-5c) In app1/templates/app1, create file index.html  
-
-
-**Step8:**  Create folder app1/templates, create folder app1/templates/app1, create file app1/templates/app1/index.html
+**Step3 :**  Create folder app1/templates, create folder app1/templates/app1, create file app1/templates/app1/index.html
 ```
 <body>
     <p>Hello World</p>
@@ -48,24 +38,13 @@ path("app1/" ,include("app1.urls")),
 ```
 
 
-**Step6 :** 
-Within Django1 project, we can create multiple apps. Let us name them as app1, app2, app3. The browser home page for each of these apps will be 
-http://127.0.0.1:8000/app1   
-
-http://127.0.0.1:8000/app2   
-
-http://127.0.0.1:8000/app3   
-
-http://127.0.0.1:8000/admin - commmon admin control for all the apps   
-
-
-**Step9 :** Go to app1/views.py
+**Step4 :** Go to app1/views.py
 ```
 def home(request):
     return render(request,'app1/index.html',{'param1':"hello world"})
 ```
 
-**Step10 :** Create urls.py in app1 and add
+**Step5 :** Create urls.py in app1 and add
 ```
 from django.urls import path
 from app1.views import home
@@ -73,7 +52,7 @@ urlpatterns = [path('', home),]
 ```
 
 
-**Step11 :** In Terminal run,  
+**Step6 :** In Terminal run,  
 ```
 python manage.py runserver
 ```  
@@ -84,9 +63,7 @@ In Browser,
 We should make changes in the server at localhost port 8000 i.e; **127.0.0.1:8000/app1**
 
 
-## Take Input from a HTML Form: In *views.py*
-
-**Step12 :** 
+**Step7:** 
 ```
 from django.shortcuts import render
 def home(request):
@@ -95,32 +72,42 @@ def home(request):
     result=fact(n1)
     return render(request,'app1/index.html',{'param1':result,'param2':n1})
 
-def fact(n1)
+def fact(n1):  
     fact1=1
-    for i in range(0,n1+1,1):
-    fact1=fact1*i
+    for i in range(1,n1+1,1):
+        fact1=fact1*i
     return fact1
 
 ```
-Also make changes in index.html  
+**Step8 :** - In index.html  
 ```
 <body>
     <p>Hello World</p>
-    <p>The factorial of {{param1}} is {{param2}}</p>
+    <p>The factorial of {{param2}} is {{param1}}</p>
 </body>
+```  
+
+**Step9 :** In Terminal run,  
+```
+python manage.py runserver
 ```  
 We should get output as *The factorial of 5 is 120*  
 
-## PHASE4: add forms to take input from the user ##
- We can modify the code using forms  
- **Step13 :** create forms.py in the factorial1 folder  
+## Take Input from a HTML Form: In *views.py*
+----End of Factorial Program in App1-------------- 
+
+**Assignment2 - Create app2 which takes "5" as an input in a HTML Form and calculates the Factorial of 5**
+>django-admin startapp app2
+>Repeat Steps 1,2,3,4,5,6
+
+ **Step10 :** Create new file **app2/forms.py**
 ```
 from django import forms
 class inputform(forms.Form):
     input1=forms.IntegerField(min_value=1,max_value=10,label="Enter a number")
 ```
 
-**Step14 :** in index.html
+**Step11 :** in index.html
 ```
 <body>
     <h1>Factorial Program</h1>
@@ -129,17 +116,14 @@ class inputform(forms.Form):
     {{form.as_p}}    
     <button type="submit">find factorial</button>
     </form>
-    {% if param1 %}
-    <h2>Factorial of {{param2}} is {{param1}}</h2>
-    {% endif %}
-</body>
-```
-*we can use (p, ul, table)  where  p-paragraph, ul-unordered list, table-table*  
+    <p>Factorial of {{param2}} is {{param1}}
+    </body>
+```  
    
-**Step15 :** in app1/views.py, 
+**Step12 :** in app2/views.py, 
 ```
 from django.shortcuts import render
-from app1.forms import inputform
+from app2.forms import inputform
 def home(request):
     if request.method=="POST":
         form1=inputform(request.POST)
@@ -147,27 +131,26 @@ def home(request):
             data=form1.cleaned_data
             n1=data.get("input1")
             result=fact(n1)
-            return render(request,"factorial1/index.html",{'param1':result, 'param2':n1, 'form':form1})
+            return render(request,"app2/index.html",{'param1':result, 'param2':n1, 'form':form1})
     else:
         form1=inputform()  
-    return render(request,"factorial1/index.html",{'param1':result, 'param2':n1, 'form':form1})
+    return render(request,"app2/index.html",{'param1':result, 'form':form1})
 ```
 ```
 def fact(n1):  
-    result=1
+    fact1=1
     for i in range(1,n1+1,1):
-        result=result*i
-    return result
+        fact1=fact1*i
+    return fact1
 ```
+**Step13 :** In Terminal run,  
 ```
->python manage.py runserver
-```
-http://127.0.0.1:8000/app1                              
-----End of Factorial Program in App1--------------  
+python manage.py runserver
+```  
+In http://127.0.0.1:8000/app2 we should get *The factorial of 5 is 120*                     
+----End of Factorial Program in App2--------------  
 
-Assignment: Create app2 to print factorial numbers from 1 to 8, one below the other as shown. Let us return param1=[1,2,6,24,120,720,5040,40320] and param2=[1,2,3,4,5,6,7,8] from views.py and iterate these 2 lists using {% for each %} syntax  
-    
-
+**Assignment3: Create app3** to print factorial numbers from 1 to 8, one below the other as shown. Let us return param1=[1,2,6,24,120,720,5040,40320] and param2=[1,2,3,4,5,6,7,8] from views.py and iterate these 2 lists using {% for each %} syntax  
 Factorial of 1 - 1   
 Factorial of 2 - 2   
 Factorial of 3 - 6   
@@ -176,8 +159,13 @@ Factorial of 5 - 120
 Factorial of 6 - 720   
 Factorial of 7 - 5040   
 Factorial of 8 - 40320
+```
+django-admin startapp app3
+```
+>Repeat Steps 1,2,3,4,5,6
 
-Changes in the body section of index.html
+
+In **app3/index.html**
 ```  
 <body>   
   <p>Factorial of Numbers</p>
@@ -187,11 +175,37 @@ Changes in the body section of index.html
 </body>
 ``` 
 
-
-We can further enhance the index.html 
+In **app3/views.py**, we can zip 2 lists and return to HTML
 ```
+def home(request):
+    if request.method=="POST":
+        form1=inputform(request.POST)
+        if form1.is_valid():
+            data=form1.cleaned_data
+            n1=data.get("input1")
+            result=getFact(n1)  //get factorial for all numbers upto limit1
+            return render(request,"app3/index.html",{'param1':result,'form':form1})
+    else:
+        form1=inputform() 
+    return render(request,"app3/index.html",{'form':form1})
+```
+```
+def fact(n1):  
+    fact1=1
+    for i in range(1,n1+1,1):
+        fact1=fact1*i
+    return fact1
 
-
+def getFact(limit1):
+    list1=[]
+    list2=[]
+    for i in range(2,limit1+1,1):
+        list1.append(fact(i))
+        list2.append(i)
+    return zip(list1,list2)
+```
+In **app3/index.html** 
+```
 <body>   
   <p>Factorial of Numbers</p>
   {% for i,j in param1 %}
@@ -200,26 +214,17 @@ We can further enhance the index.html
 </body>
 
 ```
-Corresponding changes in views.py
+**Assignment4 - Create app4 using automation script**
+https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/sangamone-django4.py
 ```
-def home(request):
-    result=getFact(8)
-    return render(request,'app2/index.html',{'param1':result})
-
-def getFact(limit):
-    factorial=[]
-    numbers=[]
-    for j in range(1,limit+1,1):
-        n1=j
-        fact1=1
-        for i in range(1,n1+1,1):
-            fact1=fact1*i
-        factorial.append(fact1)
-        numbers.append(n1)
-    return zip(factorial,numbers)
+python sangamone-django4.py django1 app4
 ```
-   
-
+The following files are automatically updated or created
+>django1\settings.py
+>django1\urls.py
+>app1\views.py
+>app1\urls.py 
+>templates\app4\index.html
 
 
 ## Basic Setup for new programmers
@@ -230,34 +235,22 @@ https://www.python.org/
 
 2. Django installation.  Go to IDLE - File - Path Browser. Check the location where Python is installed. Eg
 >cd USERS
->
 >cd LAPTOP
->
 >cd AppData  ( This is a hidden folder, but we can go to cmd and change directory)
->
-> cd Local
->
-> cd Programs
->
-> cd Python
->
-> cd Python312
->
-> cd Scripts
->
-> pip3 install django
->
-> pip3 install mysql-connector-python
+>cd Local
+>cd Programs
+>cd Python
+>cd Python312
+>cd Scripts
+>pip3 install django
+>pip3 install mysql-connector-python
 >
 
 3. MySQL installation.  Choose MySQL Community (GPL) Downloads and install 2 products
    
 a) MySQL Server   
-
 b) MySQL Workbench   
-
 set username=root,  password=root   
-
 ### >create database db1
 ### >create table employee(id bigint auto_increment primary key, name1 varchar(100))
 ### >insert into employee(name1) values ("Chandra"), ("Siva"), ("Rajani")
@@ -303,19 +296,11 @@ To test,
 >python --version
 >django-admin
 
-
-9. Sample Django programs available in  https://github.com/ckuthyar/fdp2_python_django_20240506/tree/main
+9. Sample Django programs available in  https://github.com/ckuthyar/fdp2_python_django_20240506/
 
 10. Setup procedures in  README.md and README2.md
 https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/README.md
 https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/README2.md
 
-11. An automated program sangamone-django3.0.py to change the following files has been created to change the following files as required by Django
->django1\settings.py
->django1\urls.py
->app1\views.py
->app1\urls.py  (new file to be created)
-> templates\app1\index.html  (new file to be created within templates folder and within app1 folder)
-https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/sangamone-django.py
 
 
