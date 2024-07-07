@@ -216,6 +216,7 @@ In **app3/index.html**
 ```
 **Assignment4 - Create app4 using automation script**
 https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/sangamone-django4.py
+
 ```
 python sangamone-django4.py django1 app4
 ```
