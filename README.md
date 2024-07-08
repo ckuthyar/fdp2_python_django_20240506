@@ -19,7 +19,7 @@ django-admin startapp app1
 
 **Step1  :** In **django1/settings.py** add 
 ```
-INSTALLED_APPS = [...,"app1", ]
+INSTALLED_APPS = [...,'app1', ]
 ```
 **Step2 :** In **django1/urls.py**  - add *include* in import, add *path* in *urlpatterns* 
 ```
@@ -27,9 +27,9 @@ from django.urls import path,include
 ```
 
 ```
-path("app1/" ,include("app1.urls")),
+path('app1/' ,include('app1.urls')),
 ```
-**Step3 :**  Create folder app1/templates, create folder app1/templates/app1, create file app1/templates/app1/index.html
+**Step3 :**  Under app1 create new folder templates,  Under templates create new folder app1, Under app1, create new file index.html
 ```
 <body>
     <p>Hello World</p>
@@ -44,7 +44,7 @@ def home(request):
     return render(request,'app1/index.html',{'param1':"hello world"})
 ```
 
-**Step5 :** Create urls.py in app1 and add
+**Step5 :** Create new file urls.py in app1 and add
 ```
 from django.urls import path
 from app1.views import home
@@ -52,7 +52,7 @@ urlpatterns = [path('', home),]
 ```
 
 
-**Step6 :** In Terminal run,  
+**Step6 :** Go to Project folder (django1), In Terminal run,  
 ```
 python manage.py runserver
 ```  
@@ -235,16 +235,16 @@ https://www.python.org/
 
 
 2. Django installation.  Go to IDLE - File - Path Browser. Check the location where Python is installed. Eg
->cd USERS
->cd LAPTOP
->cd AppData  ( This is a hidden folder, but we can go to cmd and change directory)
->cd Local
->cd Programs
->cd Python
->cd Python312
->cd Scripts
->pip3 install django
->pip3 install mysql-connector-python
+>cd USERS   
+>cd LAPTOP   
+>cd AppData     ( This is a hidden folder, but we can go to cmd and change directory)
+>cd Local   
+>cd Programs   
+>cd Python   
+>cd Python312   
+>cd Scripts   
+>pip3 install django   
+>pip3 install mysql-connector-python   
 >
 
 3. MySQL installation.  Choose MySQL Community (GPL) Downloads and install 2 products
