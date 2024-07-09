@@ -8,15 +8,14 @@
 <body>
     <header>
         <p>RV Aster Hospital is in JP Nagar</p>
-        {% block block1 %}
         <h1>Welcome to Our Website!</h1>
-        {% endblock %}
 
-        {% block block2 %}
+        {% block block1 %}
         <ol>
             <li><a href="{% url 'doctor1' %}">Doctor1</a></li>
             <li><a href="{% url 'doctor2' %}">Doctor2</a></li>
             <li><a href="{% url 'doctor3' %}">Doctor3</a></li>
+            <li><a href="{% url 'doctor4' %}">Doctor4</a></li>
         </ol>
         {% endblock %}
     </header>

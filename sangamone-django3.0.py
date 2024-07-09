@@ -1,6 +1,7 @@
 import sys
 import subprocess
 import os
+
 list1=[]
 for i in range(1,3):
     list1.append(sys.argv[i])
@@ -25,6 +26,10 @@ f1=open("urls.py","r+")
 info1=f1.read()
 if f"{dapp}.urls" not in info1 and "from django.urls import path,include" not in info1:
     any1=info1.replace("path('admin/', admin.site.urls),",f"""path('admin/', admin.site.urls),\n\tpath("{dapp}/" ,include("{dapp}.urls")),""").replace("from django.urls import path","from django.urls import path,include")
+    f1.seek(0)
+    f1.write(any1)
+elif f"{dapp}.urls" not in info1:
+    any1=info1.replace("path('admin/', admin.site.urls),",f"""path('admin/', admin.site.urls),\n\tpath("{dapp}/" ,include("{dapp}.urls")),""")
     f1.seek(0)
     f1.write(any1)
 # else:
@@ -85,6 +90,7 @@ f1.write("""<!DOCTYPE html>
 </body>
 </html>
 """)
+
 f1.close()
 
 os.chdir(f'../../..')

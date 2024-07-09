@@ -10,5 +10,5 @@ def home(request):
             form1.save()
             return render(request ,'app1/index.html', {'form': form1})
     else:
-        form1 = i
+        form1 = hdfcforms()
     return render(request,"app1/index.html",{'form': form1})

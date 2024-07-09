@@ -12,3 +12,7 @@ def doctor3(request):
 
 def doctorlayout(request):
     return render(request,'app1/doctorlayout.html')
+
+def doctor4(request):
+    return render(request,'app1/doctor4.html')
+
