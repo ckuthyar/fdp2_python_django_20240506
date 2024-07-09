@@ -91,9 +91,22 @@ def fact(n1):
 python manage.py runserver
 ```  
 We should get output as *The factorial of 5 is 120*  
-
-## Take Input from a HTML Form: In *views.py*
 ----End of Factorial Program in App1-------------- 
+
+**Assignment1 - Create a new Django project and a new app using an automated script in link**
+https://github.com/ckuthyar/fdp2_python_django_20240506/blob/main/sangamone-django3.0.py
+>py sangamone-django3.0.py project1 app1
+This will automatically create/update 5 files
+project1/settings.py   
+project1/urls.py   
+app1/templates/app1/index.html   
+app1/views.py   
+app1/urls.py   
+>py manage.py runserver ...will be auto-executed
+http://127.0.0.1:8000/app1 ....will show the output
+
+----End of project1 app1 using Automated Script-----
+
 
 **Assignment2 - Create app2 which takes "5" as an input in a HTML Form and calculates the Factorial of 5**
 >django-admin startapp app2
