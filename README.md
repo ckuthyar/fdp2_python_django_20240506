@@ -67,7 +67,6 @@ We should make changes in the server at localhost port 8000 i.e; **127.0.0.1:800
 ```
 from django.shortcuts import render
 def home(request):
-    factorial=1
     n1=5
     result=fact(n1)
     return render(request,'app1/index.html',{'param1':result,'param2':n1})
@@ -134,7 +133,7 @@ def home(request):
             return render(request,"app2/index.html",{'param1':result, 'param2':n1, 'form':form1})
     else:
         form1=inputform()  
-    return render(request,"app2/index.html",{'param1':result, 'form':form1})
+    return render(request,"app2/index.html",{'form':form1})
 ```
 ```
 def fact(n1):  
