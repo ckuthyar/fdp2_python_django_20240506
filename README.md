@@ -27,9 +27,9 @@ from django.urls import path,include
 ```
 
 ```
-path('app1/' ,include('app1.urls')),
+path('app1/',include('app1.urls')),
 ```
-**Step3 :**  Under app1 create new folder templates,  Under templates create new folder app1, Under app1, create new file index.html
+**Step3 :**  Under app1 create new folder **templates**,  Under templates create new folder **app1**, Under app1, create new file **index.html**
 ```
 <body>
     <p>Hello World</p>
@@ -239,6 +239,30 @@ The following files are automatically updated or created
 >app1\urls.py 
 >templates\app4\index.html
 
+## Note1: To display images in HTML   
+1. In django1 directory create folder **static**
+2. Inside **static** folder create folder **images** 
+3. Store all your images in **images** folder
+4. In django1/settings.py add **import os**
+5. In django1/settings.py under **STATIC_URL** add **STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')**
+]
+6. In app1/index.html, add **{% load static %}**
+7. In app1/index.html within body, inside img tag add
+**img src="{% static 'images/img1.jpg' %}"**
+
+
+## Note2: To add CSS file in HTML   
+1. In django1 directory create folder **static**
+2. Inside **static** folder create folder **css** 
+3. Create **style.css** in **css** folder
+4. In django1/settings.py add **import os**
+5. In django1/settings.py under **STATIC_URL** add **STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')**
+]
+6. In app1/index.html, add **{% load static %}**
+7. In app1/index.html within head, within style within link tag add
+**link rel="stylesheet" href="{% static 'style.css' %}"**
 
 ## Basic Setup for new programmers
 
