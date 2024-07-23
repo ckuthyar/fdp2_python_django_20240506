@@ -134,7 +134,11 @@ In tempates/app2/index.html
 #### >python manage.py migrate
 
 #### http://127.0.0.1:8080/app2    
-#### >python manage.py createsuperuser   
+#### >python manage.py createsuperuser  
+
+Provide username - eg admin   
+Provide email address - eg user1@gmail.com  
+Provide password - *When you enter the password, you will not be able to see any character on the console. However, your entry will be accepted by the system. If password rule is not followed, you can override by clicking **y***   
 #### http://127.0.0.1:8080/admin
 
 In **app2/models.py** - Within the class, add a function, so that the object name is the same as the student's name

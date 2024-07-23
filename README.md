@@ -243,26 +243,59 @@ The following files are automatically updated or created
 1. In django1 directory create folder **static**
 2. Inside **static** folder create folder **images** 
 3. Store all your images in **images** folder
-4. In django1/settings.py add **import os**
-5. In django1/settings.py under **STATIC_URL** add **STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')**
+4. In django1/settings.py add in the very beginning 
+```
+import os
+```
+5. In django1/settings.py under **STATIC_URL** add 
+```
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
 ]
-6. In app1/index.html, add **{% load static %}**
-7. In app1/index.html within body, inside img tag add
-**img src="{% static 'images/img1.jpg' %}"**
+```
+6. In app1/index.html, add
+```
+{% load static %}
+<body>
+<img src="{% static 'images/img1.jpg' %}">
+</body>
+```
 
 
 ## Note2: To add CSS file in HTML   
 1. In django1 directory create folder **static**
 2. Inside **static** folder create folder **css** 
 3. Create **style.css** in **css** folder
-4. In django1/settings.py add **import os**
-5. In django1/settings.py under **STATIC_URL** add **STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')**
+4. In django1/settings.py add in the very beginning
+```
+import os
+```
+5. In django1/settings.py under **STATIC_URL** add 
+```
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
 ]
-6. In app1/index.html, add **{% load static %}**
-7. In app1/index.html within head, within style within link tag add
-**link rel="stylesheet" href="{% static 'style.css' %}"**
+```
+6. In app1/index.html, add
+```
+{% load static %}
+<body>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</body>
+```
+
+## Note3: Use HttpResponse without creating index.html 
+
+1. In app1/views.py, add
+```
+from django.http import HttpResponse
+ 
+def home(request):
+    result="Hello World"
+    return HttpResponse(result)
+```
+    
+    
 
 ## Basic Setup for new programmers
 
