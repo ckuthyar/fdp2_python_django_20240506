@@ -13,9 +13,9 @@ In **app1/models.py**
 ```
 from django.db import models
 class students(models.Model):
-        name1=models.CharField(max_length=50)
-        college1=models.CharField(max_length=100)
-        course1=models.CharField(max_length=30)
+    name1=models.CharField(max_length=50)
+    college1=models.CharField(max_length=100)
+    course1=models.CharField(max_length=30)
 ```
 
 In **app1/forms.py** and add
@@ -66,7 +66,7 @@ In tempates/app1/index.html
 In **app1/models.py** - Within the class, add a function, so that the object name is the same as the student's name
 ```
 def __str__(self):
-        return self.name1
+    return self.name1
 ```
         
 In **app1/admin.py**
@@ -86,10 +86,10 @@ In **app2/models.py**
 ```
 from django.db import models
 class bank1(models.Model):
-        fname1=models.CharField(max_length=50)
-        lname1=models.CharField(max_length=100)
-        aadhar1=models.IntegerField(max_length=12)
-        pincode1=models.IntegerField(max_length=6)
+    fname1=models.CharField(max_length=50)
+    lname1=models.CharField(max_length=100)
+    aadhar1=models.IntegerField(max_length=12)
+    pincode1=models.IntegerField(max_length=6)
 ```
 
 In **app2/forms.py** and add
@@ -144,7 +144,7 @@ Provide password - *When you enter the password, you will not be able to see any
 In **app2/models.py** - Within the class, add a function, so that the object name is the same as the student's name
 ```
 def __str__(self):
-        return self.name1
+    return self.name1
 ```
         
 In **app2/admin.py**
