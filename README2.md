@@ -119,7 +119,7 @@ def home(request):
 ```
 
 
-In tempates/app2/index.html
+In templates/app2/index.html
 ```
     <form method="POST">
         {% csrf_token %}
@@ -132,25 +132,33 @@ In tempates/app2/index.html
 
 #### >python manage.py makemigrations
 #### >python manage.py migrate
-
+#### >python manage.py runserver
 #### http://127.0.0.1:8080/app2    
-#### >python manage.py createsuperuser  
 
+Open db.sqlite3 and check if the database entries are seen. Download VSCode extension **SQLite Viewer** to see the database entries
+
+#### http://127.0.0.1:8080/admin
+You will not be able to login now since admin user is not created.
+
+#### >python manage.py createsuperuser  
 Provide username - eg admin   
 Provide email address - eg user1@gmail.com  
-Provide password - *When you enter the password, you will not be able to see any character on the console. However, your entry will be accepted by the system. If password rule is not followed, you can override by clicking **y***   
+Provide password - *When you enter the password, you will not be able to see any character on the console. However, your entry will be accepted by the system. If password rule is not followed, you can override by clicking **y***  
+#### >python manage.py runserver 
 #### http://127.0.0.1:8080/admin
+You have entered the Admin console, but you are not able to see the Database entries yet.
+
+In **app2/admin.py**
+```
+from .models import students
+admin.site.register(students)
+```
+You are able to see the Database entries, but the records are showing with some object name. We can further enhance as below
 
 In **app2/models.py** - Within the class, add a function, so that the object name is the same as the student's name
 ```
 def __str__(self):
     return self.name1
 ```
-        
-In **app2/admin.py**
-```
-from .models import students
-admin.site.register(students)
-```
-We can also check by clicking on db.sqlite
+
 
