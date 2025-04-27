@@ -271,4 +271,64 @@ Yasmin,F,E80BD46CS0025,English:75,Maths:100,Physics:95,Chemistry:86,Biology:85,P
 Zafar,M,E80BD46CS0026,English:75,Maths:98,Physics:87,Chemistry:79,Biology:89,PASS   
 
 **Assignment 23 - Create Jumbled Words of all the US States in different files**
+Alabama   
+Alaska    
+Arizona    
+Arkansas    
+California    
+Colorado    
+Connecticut   
+Delaware    
+Florida   
+Georgia   
+Hawaii   
+Idaho   
+Illinois   
+Indiana   
+Iowa    
+Kansas   
+Kentucky   
+Louisiana   
+Maine   
+Maryland    
+Massachusetts    
+Michigan   
+Minnesota   
+Mississippi   
+Missouri    
+Montana   
+Nebraska    
+Nevada    
+New Hampshire   
+New Jersey   
+New Mexico    
+New York    
+North Carolina     
+North Dakota    
+Ohio    
+Oklahoma    
+Oregon    
+Pennsylvania    
+Rhode Island    
+South Carolina    
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
 
+**Assignment 24 - Simple Calculator**
+a) Take numbers num1=8, num2=4.  Calculate sum, difference, product, division, integer division, remainder, exponential
+b) Create a function to take any 2 integer inputs and provide above 
+num1+num2=12    
+num1-num2=4    
+num1*num2=32    
+num1/num2=2.0    
+num1//num2=2    
+num1%num2=0    
+num1**num2=4096    
