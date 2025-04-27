@@ -322,9 +322,9 @@ West Virginia
 Wisconsin
 Wyoming
 
-**Assignment 24 - Simple Calculator**
+**Assignment 24 - Simple Calculator**    
 a) Take numbers num1=8, num2=4.  Calculate sum, difference, product, division, integer division, remainder, exponential
-b) Create a function to take any 2 integer inputs and provide above 
+b) Create a function to take any 2 integer inputs and provide above     
 num1+num2=12    
 num1-num2=4    
 num1*num2=32    
