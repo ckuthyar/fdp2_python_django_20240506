@@ -171,35 +171,35 @@ f) Write into different files, each corresponding to the table printed
      out_20.txt
 
 **Assignment 20 - School Clock Angle**
-School Clock is showing 9 am.  Compute the angle between the Hour hand and the Minute hand.  It should show Time: Angle in Degrees from 9:00 am to 8:55 pm with a spacing of 5 minutes.  
+School Clock is showing 9 am.  Compute the angle between the Hour hand and the Minute hand.  It should show Time: Angle in Degrees from 9:00 am to 8:55 pm with a spacing of 5 minutes.      
 
-Sample Output:
-9:00 - 90.00
-9:05 - 
-9:10 -
-9:15 -
-9:20 -
-9:25 -
-9:30 -
-9:35 -
+Sample Output:    
+9:00 - 90.00    
+9:05 -     
+9:10 -    
+9:15 -    
+9:20 -    
+9:25 -       
+9:30 -    
+9:35 -    
 9:40 - 
-9:45 -
-9:50 -
-9:55 -
+9:45 -    
+9:50 -    
+9:55 -   
 
-10:00 - 60.00
-10:05 -
-....
-10:55
+10:00 - 60.00    
+10:05 -    
+....    
+10:55    
 
 
-20:00 -
-20:05 -
-....
-20:55 -
+20:00 -   
+20:05 -   
+....    
+20:55 -   
 
-Clues
-1) What is the exact angle between Hour Hand and Minute Hand at 3 pm ?
-2) What is the exact angle between Hour Hand and Minute Hand at 3:05 pm ?
-3) What is the exact angle between Hour Hand and Minute Hand at 3:10 pm ?
-4) What is the exact angle between Hour Hand and Minute Hand at 3:15 pm ? 
+Clues    
+1) What is the exact angle between Hour Hand and Minute Hand at 3 pm ?   
+2) What is the exact angle between Hour Hand and Minute Hand at 3:05 pm ?    
+3) What is the exact angle between Hour Hand and Minute Hand at 3:10 pm ?    
+4) What is the exact angle between Hour Hand and Minute Hand at 3:15 pm ?    
