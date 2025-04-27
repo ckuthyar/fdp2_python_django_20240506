@@ -203,3 +203,69 @@ Clues
 2) What is the exact angle between Hour Hand and Minute Hand at 3:05 pm ?    
 3) What is the exact angle between Hour Hand and Minute Hand at 3:10 pm ?    
 4) What is the exact angle between Hour Hand and Minute Hand at 3:15 pm ?    
+
+Write a program to read each line of file inConvert.txt and write the equivalent reverse conversion into outConvert.txt
+
+Example 1
+If input is 
+
+1 metre = 100 com, 
+                 
+then output should be
+
+1 metre = 100 cm
+1 cm = 0.01 metre
+
+Example 2
+
+If input is
+8 kilometres = 5 miles,
+
+then output should be
+
+1 kilometer = (5/8) miles.
+1 mile =  (8/5) kilometres
+
+Next, take input with 2 parameters (Unit and Quantity) and print the conversion on console
+
+Eg.  
+Pounds
+5
+should give,   5 Pounds = ??? kgs
+
+**Assignment 21   Andaman  Prisoner  Problem    
+There are 100 prison cells in a row. All cells are locked Jailer is given permission by the Prime Minister of India to release any number of prisoners. In Round 1, Jailer opens all the doors.   In Round 2, he closes every alternate door (2, 4, 6...).  In Round 3, every third door (3, 6, 9,....) if Door is Open,, he closes it.   If Door is Closed, he opens it.  In Round 4, every fourth door (4, 8, 12..), if Door is open,, he closes it.  If Door is Closed, he opens it.  He does this for 100 Rounds.  At the end, who are the lucky prisoners ?      
+Clue:    
+1. First, take a paper and pencil and solve this manually for 10 prison doors and 10 rounds    
+2. Before writing nested For Loops, first write 2 or 3 blocks of code manually, make sure that the program is doing what you want it to do, then convert this into a For Loop carefully without disturbing the code that is doing the job.    
+3. First get the full design in your mind first, before you start using the computer. ie. sit away from the computer, visualize the program mentally, after the entire step by step instructions are clear in your mind, then sit on the computer.     
+
+**Assignment 22 Gold Medal     
+There are 26 students in a class who have scored the following marks in 10th Std as per attached file Marks.txt  (Name, Gender, RollNo....).Write a Program to read the contents of the file. Please print the Gold Medalist (overall top scorer) and individual Topper in each subject along with the respective marks.    
+
+Amar,M,E80BD46CS0001,English:74,Maths:90,Physics:86,Chemistry:78,Biology:60,PASS    
+Babu,M,E80BD46CS0002,English:76,Maths:91,Physics:87,Chemistry:70,Biology:70,PASS    
+Charles,M,E80BD46CS0003,English:78,Maths:92,Physics:88,Chemistry:73,Biology:80,PASS    
+David,M,E80BD46CS0004,English:80,Maths:93,Physics:89,Chemistry:76,Biology:90,PASS     
+Ekalavya,M,E80BD46CS0005,English:82,Maths:94,Physics:90,Chemistry:79,Biology:100,PASS    
+Fabin,M,E80BD46CS0006,English:84,Maths:95,Physics:91,Chemistry:82,Biology:90,PASS    
+Govind,M,E80BD46CS0007,English:48,Maths:96,Physics:92,Chemistry:85,Biology:80,PASS    
+Harnish,M,E80BD46CS0008,English:56,Maths:97,Physics:93,Chemistry:88,Biology:70,PASS    
+Irene,F,E80BD46CS0009,English:64,Maths:98,Physics:95,Chemistry:91,Biology:60,PASS    
+James,M,E80BD46CS0010,English:72,Maths:99,Physics:96,Chemistry:92,Biology:70,PASS    
+Kamaraj,M,E80BD46CS0011,English:80,Maths:100,Physics:97,Chemistry:93,Biology:80,PASS    
+Latha,F,E80BD46CS00012,English:88,Maths:99,Physics:98,Chemistry:94,Biology:90,PASS    
+Manish,M,E80BD46CS0013,English:70,Maths:98,Physics:99,Chemistry:49,Biology:100,PASS   
+Nagesh,M,E80BD46CS0014,English:76,Maths:97,Physics:87,Chemistry:59,Biology:90,PASS     
+Omar,M,E80BD46CS0015,English:82,Maths:96,Physics:89,Chemistry:69,Biology:80,PASS     
+Padma,F,E80BD46CS0016,English:88,Maths:95,Physics:91,Chemistry:79,Biology:70,PASS    
+Queenie,F,E80BD46CS0017,English:60,Maths:94,Physics:93,Chemistry:89,Biology:75,PASS     
+Roopa,F,E80BD46CS0018,English:68,Maths:93,Physics:95,Chemistry:79,Biology:80,PASS    
+Sundar,M,E80BD46CS0019,English:77,Maths:92,Physics:97,Chemistry:80,Biology:85,PASS    
+Tara,F,E80BD46CS0020,English:79,Maths:93,Physics:99,Chemistry:81,Biology:90,PASS    
+Ullas,M,E80BD46CS0021,English:75,Maths:94,Physics:87,Chemistry:82,Biology:95,PASS    
+Vasu,M,E80BD46CS0022,English:85,Maths:95,Physics:89,Chemistry:83,Biology:90,PASS    
+Wendy,F,E80BD46CS0023,English:65,Maths:96,Physics:91,Chemistry:84,Biology:85,PASS    
+Xero,M,E80BD46CS0024,English:25,Maths:98,Physics:93,Chemistry:85,Biology:80,PASS    
+Yasmin,F,E80BD46CS0025,English:75,Maths:100,Physics:95,Chemistry:86,Biology:85,PASS    
+Zafar,M,E80BD46CS0026,English:75,Maths:98,Physics:87,Chemistry:79,Biology:89,PASS    
