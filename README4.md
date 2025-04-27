@@ -268,4 +268,7 @@ Vasu,M,E80BD46CS0022,English:85,Maths:95,Physics:89,Chemistry:83,Biology:90,PASS
 Wendy,F,E80BD46CS0023,English:65,Maths:96,Physics:91,Chemistry:84,Biology:85,PASS    
 Xero,M,E80BD46CS0024,English:25,Maths:98,Physics:93,Chemistry:85,Biology:80,PASS    
 Yasmin,F,E80BD46CS0025,English:75,Maths:100,Physics:95,Chemistry:86,Biology:85,PASS    
-Zafar,M,E80BD46CS0026,English:75,Maths:98,Physics:87,Chemistry:79,Biology:89,PASS    
+Zafar,M,E80BD46CS0026,English:75,Maths:98,Physics:87,Chemistry:79,Biology:89,PASS   
+
+**Assignment 23 - Create Jumbled Words of all the US States in different files**
+
