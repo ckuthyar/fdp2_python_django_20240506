@@ -233,14 +233,14 @@ Pounds
 5
 should give,   5 Pounds = ??? kgs
 
-**Assignment 21   Andaman  Prisoner  Problem    
+**Assignment 21   Andaman  Prisoner  Problem**   
 There are 100 prison cells in a row. All cells are locked Jailer is given permission by the Prime Minister of India to release any number of prisoners. In Round 1, Jailer opens all the doors.   In Round 2, he closes every alternate door (2, 4, 6...).  In Round 3, every third door (3, 6, 9,....) if Door is Open,, he closes it.   If Door is Closed, he opens it.  In Round 4, every fourth door (4, 8, 12..), if Door is open,, he closes it.  If Door is Closed, he opens it.  He does this for 100 Rounds.  At the end, who are the lucky prisoners ?      
 Clue:    
 1. First, take a paper and pencil and solve this manually for 10 prison doors and 10 rounds    
 2. Before writing nested For Loops, first write 2 or 3 blocks of code manually, make sure that the program is doing what you want it to do, then convert this into a For Loop carefully without disturbing the code that is doing the job.    
 3. First get the full design in your mind first, before you start using the computer. ie. sit away from the computer, visualize the program mentally, after the entire step by step instructions are clear in your mind, then sit on the computer.     
 
-**Assignment 22 Gold Medal     
+**Assignment 22 Gold Medal**  
 There are 26 students in a class who have scored the following marks in 10th Std as per attached file Marks.txt  (Name, Gender, RollNo....).Write a Program to read the contents of the file. Please print the Gold Medalist (overall top scorer) and individual Topper in each subject along with the respective marks.    
 
 Amar,M,E80BD46CS0001,English:74,Maths:90,Physics:86,Chemistry:78,Biology:60,PASS    
