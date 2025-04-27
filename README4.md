@@ -332,3 +332,16 @@ num1/num2=2.0
 num1//num2=2    
 num1%num2=0    
 num1**num2=4096    
+
+**Assignment 25: In how many weeks will I become a millionaire**
+
+Dear Friends:    
+I have stumbled upon a business which gives me the following returns    
+
+In Week1 - I earn 1 cent   
+In Week2 - I earn 2 cents    
+In Week3 - I earn 4 cents    
+In Week4 - I earn 8 cents    
+In Week5 - I earn 16 cents    
+
+If this continues. week after week, in how many weeks will I become a millionaire ? In how many weeks will you become a billionaire ? Make your own assumptions    
