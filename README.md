@@ -63,7 +63,8 @@ In Browser,
 We should make changes in the server at localhost port 8000 i.e; **127.0.0.1:8000/app1**
 
 
-**Step7:** 
+**Step7:**    
+In views.py    
 ```
 from django.shortcuts import render
 def home(request):
